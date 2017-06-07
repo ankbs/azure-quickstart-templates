@@ -291,7 +291,7 @@
           "osDisk": {
             "name": "[concat('osdisk', variables('vmName'))]",
             "vhd": {
-              "uri": "[concat('http://',parameters('storageAccountName'),'.blob.core.windows.net/vhds/','AnOSDisk-', variables('vmName'), '.vhd')]"
+              "uri": "[concat('http://',parameters('storageAccountName'),'.blob.core.cloudapi.de/vhds/','AnOSDisk-', variables('vmName'), '.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -308,7 +308,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "[parameters('bootDiagnostics')]",
-            "storageUri": "[concat('http://',parameters('storageAccountName'),'.blob.core.windows.net')]"
+            "storageUri": "[concat('http://',parameters('storageAccountName'),'.blob.core.cloudapi.de')]"
           }
         }
       },
