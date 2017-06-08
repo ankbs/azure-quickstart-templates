@@ -14,8 +14,17 @@
       "metadata": {
         "description": "Storage account"
       }
+    },
+          "blobEncryptionEnabled": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Enable or disable Blob encryption at Rest."
+      }
     }
   },
+
+  
   "variables": {
     "storageName": "[concat(uniqueString(resourceGroup().id),parameters('storageAccountSuffix'))]"
   },
@@ -27,7 +36,14 @@
       "location": "[resourceGroup().location]",
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
+      },
+            "blobEncryptionEnabled": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Enable or disable Blob encryption at Rest."
       }
+    }
     }
   ],
   "outputs": {
